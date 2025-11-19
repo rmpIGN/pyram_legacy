@@ -396,7 +396,7 @@ namespace sxs {
 		f << "base_segmentation :";
 		lgl::Filename basename(filename);
 		lgl::String name = filename.stem().generic_string() + "_base.tif";
-		basename = imagename.parent_path();
+		basename = basename.parent_path();
 		basename/=name;
 		basename = ign::filesystem::make_relative(issfilename.parent_path(), basename);
 		f << basename.generic_string().c_str() << std::endl;
