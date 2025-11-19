@@ -52,8 +52,7 @@ WORKDIR /tmp
 #--------------------------------------------------------------------------------
 ENV BOOST_VERSION 1.71.0
 RUN export BOOST_VERSION_NAME=$( echo ${BOOST_VERSION} | tr '.' '_' ) && echo "boost name ${BOOST_VERSION_NAME}" && \ 
-    wget --no-check-certificate --quiet https://boostorg.jfrog.io/artifactory/main/release/${BOOST_VERSION}/source/boost_${BOOST_VERSION_NAME}.tar.gz  \
-    && tar xzf ./boost_${BOOST_VERSION_NAME}.tar.gz  \
+    wget --no-check-certificate --quiet https://archives.boost.io/release/${BOOST_VERSION}/source/boost_${BOOST_VERSION_NAME}.tar.gz  \
     && cd ./boost_${BOOST_VERSION_NAME}  \
     && ./bootstrap.sh  \
     && ./b2 install  \
